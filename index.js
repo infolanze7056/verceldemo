@@ -1,13 +1,13 @@
 const express = require("express");
-// const path = require("path");
-// const bcrypt = require("bcrypt");
-// const collection = require("./src/config");
+const path = require("path");
+const bcrypt = require("bcrypt");
+const collection = require("./src/config");
 
 const app = express();
 
-// app.set("view engine", "ejs");
+app.set("view engine", "ejs");
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // convert data into jason format
 app.use(express.json());
@@ -18,7 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 //   res.render("login");
 // });
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.render("signup");
+  //res.send("Express on Vercel");
 });
 
 // app.get("/signup", (req, res) => {
